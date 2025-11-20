@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Fashion Store</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext y='.9em' font-size='90'%3E👕%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body class="account-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">FashionStore</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="account.html" class="icon-link"><i class="icon-user"></i></a>
+                    <a href="wishlist.html" class="icon-link"><i class="icon-heart"></i></a>
+                    <a href="cart.html" class="icon-link"><i class="icon-cart"></i><span class="cart-count">0</span></a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Account Section -->
+    <section class="account-section">
+        <div class="container">
+            <!-- Login/Register Forms -->
+            <div class="auth-forms" id="authForms">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-form="login">Login</button>
+                    <button class="auth-tab" data-form="register">Register</button>
+                </div>
+
+                <!-- Login Form -->
+                <div class="auth-form active" id="loginForm">
+                    <h2>Login to Your Account</h2>
+                    <form id="loginFormSubmit">
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password <span class="required">*</span></label>
+                            <input type="password" required>
+                        </div>
+                        <div class="form-options">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Login</button>
+                    </form>
+                </div>
+
+                <!-- Register Form -->
+                <div class="auth-form" id="registerForm">
+                    <h2>Create an Account</h2>
+                    <form id="registerFormSubmit">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span class="required">*</span></label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span class="required">*</span></label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password <span class="required">*</span></label>
+                            <input type="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password <span class="required">*</span></label>
+                            <input type="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" required> I agree to the <a href="#">Terms & Conditions</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Register</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Account Dashboard (shown after login) -->
+            <div class="account-dashboard" id="accountDashboard" style="display: none;">
+                <div class="account-layout">
+                    <!-- Sidebar -->
+                    <aside class="account-sidebar">
+                        <div class="user-info">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="User">
+                            <h3>John Doe</h3>
+                            <p>john.doe@example.com</p>
+                        </div>
+                        <nav class="account-nav">
+                            <a href="#" class="nav-link active" data-page="orders">My Orders</a>
+                            <a href="wishlist.html" class="nav-link">Wishlist</a>
+                            <a href="#" class="nav-link" data-page="addresses">Saved Addresses</a>
+                            <a href="#" class="nav-link" data-page="profile">Profile Settings</a>
+                            <a href="#" class="nav-link" onclick="logout()">Logout</a>
+                        </nav>
+                    </aside>
+
+                    <!-- Main Content -->
+                    <main class="account-content">
+                        <!-- My Orders -->
+                        <div class="account-page active" id="ordersPage">
+                            <h2>My Orders</h2>
+                            <div class="orders-list">
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <div>
+                                            <h3>Order #12345</h3>
+                                            <p class="order-date">Placed on March 15, 2025</p>
+                                        </div>
+                                        <span class="order-status delivered">Delivered</span>
+                                    </div>
+                                    <div class="order-items">
+                                        <div class="order-item">
+                                            <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Product">
+                                            <div class="order-item-info">
+                                                <h4>Classic White Shirt</h4>
+                                                <p>Size: L | Color: White | Qty: 2</p>
+                                            </div>
+                                            <div class="order-item-price">$98.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="order-footer">
+                                        <div class="order-total">
+                                            <strong>Total: $108.00</strong>
+                                        </div>
+                                        <div class="order-actions">
+                                            <button class="btn btn-outline">View Details</button>
+                                            <button class="btn btn-primary">Reorder</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <div>
+                                            <h3>Order #12344</h3>
+                                            <p class="order-date">Placed on March 10, 2025</p>
+                                        </div>
+                                        <span class="order-status processing">Processing</span>
+                                    </div>
+                                    <div class="order-items">
+                                        <div class="order-item">
+                                            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Product">
+                                            <div class="order-item-info">
+                                                <h4>Denim Jacket</h4>
+                                                <p>Size: M | Color: Blue | Qty: 1</p>
+                                            </div>
+                                            <div class="order-item-price">$89.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="order-footer">
+                                        <div class="order-total">
+                                            <strong>Total: $99.00</strong>
+                                        </div>
+                                        <div class="order-actions">
+                                            <button class="btn btn-outline">Track Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Saved Addresses -->
+                        <div class="account-page" id="addressesPage">
+                            <h2>Saved Addresses</h2>
+                            <div class="addresses-list">
+                                <div class="address-card">
+                                    <div class="address-header">
+                                        <h3>Home Address</h3>
+                                        <span class="default-badge">Default</span>
+                                    </div>
+                                    <p>123 Fashion Street<br>New York, NY 10001<br>United States</p>
+                                    <div class="address-actions">
+                                        <button class="btn btn-outline">Edit</button>
+                                        <button class="btn btn-outline">Delete</button>
+                                    </div>
+                                </div>
+                                <div class="address-card">
+                                    <div class="address-header">
+                                        <h3>Work Address</h3>
+                                    </div>
+                                    <p>456 Business Ave<br>New York, NY 10002<br>United States</p>
+                                    <div class="address-actions">
+                                        <button class="btn btn-outline">Set as Default</button>
+                                        <button class="btn btn-outline">Edit</button>
+                                        <button class="btn btn-outline">Delete</button>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary">Add New Address</button>
+                            </div>
+                        </div>
+
+                        <!-- Profile Settings -->
+                        <div class="account-page" id="profilePage">
+                            <h2>Profile Settings</h2>
+                            <form class="profile-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>First Name <span class="required">*</span></label>
+                                        <input type="text" value="John" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name <span class="required">*</span></label>
+                                        <input type="text" value="Doe" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email <span class="required">*</span></label>
+                                    <input type="email" value="john.doe@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="tel" value="+1 (555) 123-4567">
+                                </div>
+                                <div class="form-group">
+                                    <label>Date of Birth</label>
+                                    <input type="date">
+                                </div>
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <select>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+
+                            <div class="password-section">
+                                <h3>Change Password</h3>
+                                <form class="password-form">
+                                    <div class="form-group">
+                                        <label>Current Password <span class="required">*</span></label>
+                                        <input type="password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>New Password <span class="required">*</span></label>
+                                        <input type="password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Confirm New Password <span class="required">*</span></label>
+                                        <input type="password" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Update Password</button>
+                                </form>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FashionStore</h3>
+                    <p>Your one-stop destination for trendy and affordable fashion.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FashionStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/account.js"></script>
+</body>
+</html>
+

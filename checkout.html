@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Fashion Store</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext y='.9em' font-size='90'%3E👕%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">FashionStore</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="account.html" class="icon-link"><i class="icon-user"></i></a>
+                    <a href="wishlist.html" class="icon-link"><i class="icon-heart"></i></a>
+                    <a href="cart.html" class="icon-link"><i class="icon-cart"></i><span class="cart-count">0</span></a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <h1 class="checkout-title">Checkout</h1>
+            
+            <div class="checkout-layout">
+                <!-- Checkout Form -->
+                <div class="checkout-form-wrapper">
+                    <!-- Login/Guest Toggle -->
+                    <div class="checkout-toggle">
+                        <button class="toggle-btn active" data-type="guest">Guest Checkout</button>
+                        <button class="toggle-btn" data-type="login">Login</button>
+                    </div>
+
+                    <!-- Guest Checkout Form -->
+                    <div class="checkout-form active" id="guestForm">
+                        <h2>Shipping Details</h2>
+                        <form id="shippingForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name <span class="required">*</span></label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name <span class="required">*</span></label>
+                                    <input type="text" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Email <span class="required">*</span></label>
+                                <input type="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Phone <span class="required">*</span></label>
+                                <input type="tel" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Address <span class="required">*</span></label>
+                                <input type="text" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>City <span class="required">*</span></label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>State <span class="required">*</span></label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>ZIP Code <span class="required">*</span></label>
+                                    <input type="text" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Country <span class="required">*</span></label>
+                                <select required>
+                                    <option value="">Select Country</option>
+                                    <option value="us">United States</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="ca">Canada</option>
+                                </select>
+                            </div>
+                        </form>
+
+                        <h2>Billing Details</h2>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="sameAsShipping">
+                                Same as shipping address
+                            </label>
+                        </div>
+                        
+                        <form id="billingForm" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name <span class="required">*</span></label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name <span class="required">*</span></label>
+                                    <input type="text" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Address <span class="required">*</span></label>
+                                <input type="text" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>City <span class="required">*</span></label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>State <span class="required">*</span></label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>ZIP Code <span class="required">*</span></label>
+                                    <input type="text" required>
+                                </div>
+                            </div>
+                        </form>
+
+                        <h2>Payment Options</h2>
+                        <div class="payment-methods">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="card" checked>
+                                <span>Credit/Debit Card</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="paypal">
+                                <span>PayPal</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cod">
+                                <span>Cash on Delivery</span>
+                            </label>
+                        </div>
+
+                        <div class="card-details" id="cardDetails">
+                            <div class="form-group">
+                                <label>Card Number <span class="required">*</span></label>
+                                <input type="text" placeholder="1234 5678 9012 3456" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Expiry Date <span class="required">*</span></label>
+                                    <input type="text" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV <span class="required">*</span></label>
+                                    <input type="text" placeholder="123" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Cardholder Name <span class="required">*</span></label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div class="checkout-form" id="loginForm">
+                        <h2>Login to Your Account</h2>
+                        <form>
+                            <div class="form-group">
+                                <label>Email <span class="required">*</span></label>
+                                <input type="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Password <span class="required">*</span></label>
+                                <input type="password" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-large">Login</button>
+                            <p>Don't have an account? <a href="account.html?register">Register here</a></p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <aside class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="order-items" id="orderItems">
+                        <!-- Order items will be loaded via JavaScript -->
+                    </div>
+                    
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="orderSubtotal">$0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Shipping:</span>
+                            <span id="orderShipping">$10.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax:</span>
+                            <span id="orderTax">$0.00</span>
+                        </div>
+                        <div class="total-row total">
+                            <span>Total:</span>
+                            <span id="orderTotal">$10.00</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-large btn-block" onclick="placeOrder()">Place Order</button>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FashionStore</h3>
+                    <p>Your one-stop destination for trendy and affordable fashion.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FashionStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
+

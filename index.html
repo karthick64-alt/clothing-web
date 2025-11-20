@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store - Modern Clothing & Apparel</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext y='.9em' font-size='90'%3E👕%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">FashionStore</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="account.html" class="icon-link"><i class="icon-user"></i></a>
+                    <a href="wishlist.html" class="icon-link"><i class="icon-heart"></i></a>
+                    <a href="cart.html" class="icon-link"><i class="icon-cart"></i><span class="cart-count">0</span></a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-slide active">
+            <div class="hero-content">
+                <h1>Season Sale - Up to 70% Off</h1>
+                <p>Discover the latest fashion trends at unbeatable prices</p>
+                <a href="shop.html" class="btn btn-primary">Shop Now</a>
+            </div>
+        </div>
+        <div class="hero-slide">
+            <div class="hero-content">
+                <h1>New Arrivals</h1>
+                <p>Fresh styles for every occasion</p>
+                <a href="shop.html" class="btn btn-primary">Explore Collection</a>
+            </div>
+        </div>
+        <div class="hero-controls">
+            <button class="hero-prev">‹</button>
+            <button class="hero-next">›</button>
+        </div>
+        <div class="hero-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Men's Wear">
+                    </div>
+                    <div class="category-content">
+                        <h3>Men's Wear</h3>
+                        <a href="shop.html?category=men" class="btn btn-outline">Shop Now</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Women's Wear">
+                    </div>
+                    <div class="category-content">
+                        <h3>Women's Wear</h3>
+                        <a href="shop.html?category=women" class="btn btn-outline">Shop Now</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Kids Wear">
+                    </div>
+                    <div class="category-content">
+                        <h3>Kids Wear</h3>
+                        <a href="shop.html?category=kids" class="btn btn-outline">Shop Now</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Accessories">
+                    </div>
+                    <div class="category-content">
+                        <h3>Accessories</h3>
+                        <a href="shop.html?category=accessories" class="btn btn-outline">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products -->
+    <section class="trending-products">
+        <div class="container">
+            <h2 class="section-title">Trending Now</h2>
+            <div class="products-slider">
+                <div class="products-grid" id="trendingProducts">
+                    <!-- Products will be loaded via JavaScript -->
+                </div>
+                <button class="slider-btn prev-btn">‹</button>
+                <button class="slider-btn next-btn">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Deals -->
+    <section class="todays-deals">
+        <div class="container">
+            <h2 class="section-title">Today's Deals</h2>
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <div class="deal-badge">50% OFF</div>
+                    <div class="deal-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Deal">
+                        <button class="wishlist-btn" onclick="toggleProductWishlist(1, 'Summer Collection', 49, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" title="Add to Wishlist">
+                            <span class="wishlist-icon">♡</span>
+                        </button>
+                    </div>
+                    <div class="deal-content">
+                        <h3>Summer Collection</h3>
+                        <p class="deal-price"><span class="old-price">$99</span> <span class="new-price">$49</span></p>
+                        <a href="product.html?id=1" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">30% OFF</div>
+                    <div class="deal-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Deal">
+                        <button class="wishlist-btn" onclick="toggleProductWishlist(2, 'Casual Wear', 55, 'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" title="Add to Wishlist">
+                            <span class="wishlist-icon">♡</span>
+                        </button>
+                    </div>
+                    <div class="deal-content">
+                        <h3>Casual Wear</h3>
+                        <p class="deal-price"><span class="old-price">$79</span> <span class="new-price">$55</span></p>
+                        <a href="product.html?id=2" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">40% OFF</div>
+                    <div class="deal-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1594938291221-94f18cbb5660?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Deal">
+                        <button class="wishlist-btn" onclick="toggleProductWishlist(3, 'Formal Attire', 77, 'https://images.unsplash.com/photo-1594938291221-94f18cbb5660?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" title="Add to Wishlist">
+                            <span class="wishlist-icon">♡</span>
+                        </button>
+                    </div>
+                    <div class="deal-content">
+                        <h3>Formal Attire</h3>
+                        <p class="deal-price"><span class="old-price">$129</span> <span class="new-price">$77</span></p>
+                        <a href="product.html?id=3" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">25% OFF</div>
+                    <div class="deal-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Deal">
+                        <button class="wishlist-btn" onclick="toggleProductWishlist(4, 'Sportswear', 67, 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" title="Add to Wishlist">
+                            <span class="wishlist-icon">♡</span>
+                        </button>
+                    </div>
+                    <div class="deal-content">
+                        <h3>Sportswear</h3>
+                        <p class="deal-price"><span class="old-price">$89</span> <span class="new-price">$67</span></p>
+                        <a href="product.html?id=4" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Amazing quality and fast shipping! I love shopping here."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Customer">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Best clothing store online! Great prices and excellent customer service."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Customer">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p>Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★☆</div>
+                    <p class="testimonial-text">"Love the variety and the quality is outstanding. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Customer">
+                        <div>
+                            <h4>Emily Davis</h4>
+                            <p>Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest fashion trends, exclusive offers, and style tips delivered to your inbox.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FashionStore</h3>
+                    <p>Your one-stop destination for trendy and affordable fashion.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FashionStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

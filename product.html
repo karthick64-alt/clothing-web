@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Fashion Store</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext y='.9em' font-size='90'%3E👕%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">FashionStore</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="account.html" class="icon-link"><i class="icon-user"></i></a>
+                    <a href="wishlist.html" class="icon-link"><i class="icon-heart"></i></a>
+                    <a href="cart.html" class="icon-link"><i class="icon-cart"></i><span class="cart-count">0</span></a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details -->
+    <section class="product-details">
+        <div class="container">
+            <div class="product-layout">
+                <!-- Product Images -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img id="mainImage" src="https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Product">
+                        <button class="zoom-btn" id="zoomBtn">🔍</button>
+                        <button class="wishlist-btn" onclick="toggleProductWishlist(1, 'Classic White Shirt', 49, 'https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" title="Add to Wishlist" id="productWishlistBtn">
+                            <span class="wishlist-icon">♡</span>
+                        </button>
+                    </div>
+                    <div class="thumbnail-images">
+                        <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Thumbnail" class="thumbnail active" onclick="changeImage(this.src)">
+                        <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Thumbnail" class="thumbnail" onclick="changeImage(this.src)">
+                        <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Thumbnail" class="thumbnail" onclick="changeImage(this.src)">
+                        <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Thumbnail" class="thumbnail" onclick="changeImage(this.src)">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1 id="productTitle">Classic White Shirt</h1>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">(4.5) 120 Reviews</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price" id="currentPrice">$49</span>
+                        <span class="old-price" id="oldPrice">$79</span>
+                        <span class="discount">Save 38%</span>
+                    </div>
+                    <p class="product-description" id="productDescription">
+                        This classic white shirt is made from premium cotton fabric, ensuring comfort and durability. Perfect for both casual and formal occasions. Features a modern fit with attention to detail in every stitch.
+                    </p>
+
+                    <!-- Size Selection -->
+                    <div class="product-option">
+                        <label>Size: <span class="required">*</span></label>
+                        <div class="size-options" id="sizeOptions">
+                            <button class="size-btn" data-size="S">S</button>
+                            <button class="size-btn" data-size="M">M</button>
+                            <button class="size-btn active" data-size="L">L</button>
+                            <button class="size-btn" data-size="XL">XL</button>
+                        </div>
+                        <a href="#" class="size-guide-link">Size Guide</a>
+                    </div>
+
+                    <!-- Color Selection -->
+                    <div class="product-option">
+                        <label>Color: <span class="required">*</span></label>
+                        <div class="color-options" id="colorOptions">
+                            <button class="color-btn active" data-color="white" style="background-color: #fff; border: 2px solid #ccc;"></button>
+                            <button class="color-btn" data-color="blue" style="background-color: #3498db;"></button>
+                            <button class="color-btn" data-color="black" style="background-color: #000;"></button>
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="product-option">
+                        <label>Quantity:</label>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="decreaseQty()">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="10">
+                            <button class="qty-btn" onclick="increaseQty()">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Stock Status -->
+                    <div class="stock-status">
+                        <span class="in-stock">✓ In Stock</span>
+                        <span class="stock-count">Only 5 left!</span>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="product-actions">
+                        <button class="btn btn-primary btn-large" onclick="addToCartFromProduct()">Add to Cart</button>
+                        <button class="btn btn-secondary btn-large" onclick="buyNow()">Buy Now</button>
+                        <button class="btn-icon" onclick="toggleProductWishlist(1, 'Classic White Shirt', 49, 'https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')" id="wishlistBtn" title="Add to Wishlist">♡</button>
+                    </div>
+
+                    <!-- Product Meta -->
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <strong>SKU:</strong> <span>FS-001</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Category:</strong> <a href="shop.html?category=men">Men's Wear</a>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Tags:</strong> <a href="#">Shirt</a>, <a href="#">Casual</a>, <a href="#">Formal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="details">Fabric & Care</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews (120)</button>
+                    <button class="tab-btn" data-tab="faq">FAQ</button>
+                </div>
+
+                <div class="tab-content active" id="description">
+                    <h3>Product Description</h3>
+                    <p>Our Classic White Shirt is a wardrobe essential that combines timeless style with modern comfort. Crafted from premium 100% cotton, this shirt offers exceptional breathability and a soft feel against your skin.</p>
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>100% Premium Cotton Fabric</li>
+                        <li>Modern Fit Design</li>
+                        <li>Button-Down Collar</li>
+                        <li>Machine Washable</li>
+                        <li>Wrinkle-Resistant</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="details">
+                    <h3>Fabric Details & Care Instructions</h3>
+                    <h4>Fabric Composition:</h4>
+                    <ul>
+                        <li>100% Cotton</li>
+                        <li>Weight: 180 GSM</li>
+                        <li>Origin: Organic Cotton</li>
+                    </ul>
+                    <h4>Care Instructions:</h4>
+                    <ul>
+                        <li>Machine wash cold with like colors</li>
+                        <li>Do not bleach</li>
+                        <li>Tumble dry low</li>
+                        <li>Iron on medium heat</li>
+                        <li>Dry clean if needed</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="reviews">
+                    <h3>Customer Reviews</h3>
+                    <div class="reviews-summary">
+                        <div class="rating-breakdown">
+                            <div class="overall-rating">
+                                <span class="big-rating">4.5</span>
+                                <span class="stars">★★★★★</span>
+                                <p>Based on 120 reviews</p>
+                            </div>
+                            <div class="rating-bars">
+                                <div class="rating-bar">
+                                    <span>5★</span>
+                                    <div class="bar"><div class="fill" style="width: 70%"></div></div>
+                                    <span>70%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4★</span>
+                                    <div class="bar"><div class="fill" style="width: 20%"></div></div>
+                                    <span>20%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3★</span>
+                                    <div class="bar"><div class="fill" style="width: 5%"></div></div>
+                                    <span>5%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2★</span>
+                                    <div class="bar"><div class="fill" style="width: 3%"></div></div>
+                                    <span>3%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1★</span>
+                                    <div class="bar"><div class="fill" style="width: 2%"></div></div>
+                                    <span>2%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews-list">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div>
+                                    <h4>John Doe</h4>
+                                    <span class="stars">★★★★★</span>
+                                    <span class="review-date">2 days ago</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Excellent quality! The shirt fits perfectly and the fabric is very comfortable. Highly recommend!</p>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div>
+                                    <h4>Jane Smith</h4>
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="review-date">1 week ago</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Great shirt, good value for money. The only minor issue is that it wrinkles a bit easily.</p>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div>
+                                    <h4>Mike Johnson</h4>
+                                    <span class="stars">★★★★★</span>
+                                    <span class="review-date">2 weeks ago</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Perfect fit and quality. Will definitely buy again!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="faq">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <h4 class="faq-question">What sizes are available? <span>+</span></h4>
+                            <p class="faq-answer">We offer sizes S, M, L, and XL. Please refer to our size guide for measurements.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4 class="faq-question">Is this shirt machine washable? <span>+</span></h4>
+                            <p class="faq-answer">Yes, this shirt is machine washable. Please wash in cold water and tumble dry on low heat.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4 class="faq-question">What is the return policy? <span>+</span></h4>
+                            <p class="faq-answer">We offer a 30-day return policy. Items must be unworn and in original packaging.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4 class="faq-question">How long does shipping take? <span>+</span></h4>
+                            <p class="faq-answer">Standard shipping takes 5-7 business days. Express shipping (2-3 days) is also available.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <section class="related-products">
+                <h2 class="section-title">Related Products</h2>
+                <div class="products-grid" id="relatedProducts">
+                    <!-- Related products will be loaded via JavaScript -->
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FashionStore</h3>
+                    <p>Your one-stop destination for trendy and affordable fashion.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FashionStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>
+
